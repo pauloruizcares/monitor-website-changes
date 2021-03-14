@@ -3,6 +3,7 @@ import os
 import hashlib
 from urllib.request import urlopen, Request
 from dotenv import load_dotenv
+import datetime
 
 def isPageChange(url):
     response = urlopen(url).read()
@@ -21,7 +22,7 @@ def isPageChange(url):
 
             if newHash == currentHash:
                 time.sleep(30)
-                print("not changed")
+                print("not changed", datetime.datetime.now())
                 continue
             else:
                 print("something changed")
